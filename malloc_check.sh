@@ -4,6 +4,8 @@
 find . -name "main.c" -type f | while read -r file; do
     cat >> "$file" << 'EOL'
 
+#define _GNU_SOURCE
+#define __USE_GNU
 #include <dlfcn.h>
 #ifndef FAIL_NUM
 # define FAIL_NUM 20
